@@ -16,7 +16,7 @@ jobs:
         run: echo "Secret Scanning"
 
       - name: Gitleaks
-  uses: gitleaks/gitleaks-action@v2.3.9
+        uses: gitleaks/gitleaks-action@v2.3.9
         
       - name: SAST
         run: echo "SAST"
