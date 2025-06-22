@@ -1,4 +1,4 @@
-name: hello-world
+name: hello-world-cf
 on: push
 jobs:
   my-job:
@@ -11,18 +11,15 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
+        
       - name: Secret Scanning
-        run: echo "Secret Scanning"
-
-      - name: Gitleaks
-        uses: gitleaks/gitleaks-action@v2.3.9
+        uses: gitleaks/gitleaks-action@v2
         
       - name: SAST
         run: echo "SAST"
         
       - name: Docker Image
-        run: echo "Docker Image"
+        run: docker build -t sbose425/cf-sysfoo .
         
       - name: DockerHub
         run: echo "DockerHub"
